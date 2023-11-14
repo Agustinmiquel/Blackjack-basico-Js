@@ -27,9 +27,11 @@ const detener = document.querySelector('#btnDetener');
 const creardeck = () => {
 
     for (let i=2; i<=10; i++){
-    for (let carta of cartas)
-    deck.push(i+ carta)
-}
+        for (let carta of cartas){
+            
+            deck.push(i+ carta)
+        }
+    }
 
 for (let carta of cartas) {
     for (let esp of especiales){
@@ -37,6 +39,7 @@ for (let carta of cartas) {
     }
 }
 
+    deck = _.shuffle( deck );
     console.log (deck);
     return deck;
 };
@@ -79,8 +82,8 @@ const turnoComputadora = (puntosminimos) => {
     const imgCarta = document.createElement('img'); 
     imgCarta.src= `assets/cartas/${carta}.png`;
     imgCarta.classList.add('carta'); 
-    
     divCartasComputadora.append(imgCarta);
+
     if (puntosminimos > 21){
         break;
     }
@@ -141,6 +144,7 @@ turnoComputadora (puntosJugador)
 }); 
 
 nuevo.addEventListener('click', () => {
+    
     console.clear();
     //para limpiar la consola
     deck=[];
@@ -164,9 +168,9 @@ nuevo.addEventListener('click', () => {
 });
 
 
-creardeck();
-shuffleDeck();
-console.log(deck);
-//Pedircarta();
-const valor = Valorcarta ( Pedircarta ());
-console.log ({valor});
+// creardeck();
+// shuffleDeck();
+// console.log(deck);
+// //Pedircarta();
+// const valor = Valorcarta ( Pedircarta ());
+// console.log ({valor});
